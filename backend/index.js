@@ -9,7 +9,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 
-const swaggerDocument = require('./api/swagger.json');
+const swaggerDocument = require('./swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
