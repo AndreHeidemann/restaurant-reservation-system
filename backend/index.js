@@ -8,25 +8,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-const swaggerOptions = {
-  swaggerDefinition: {
-    openapi: '3.0.0',
-    info: {
-      title: 'API de Reserva e Menu do Restaurante',
-      version: '1.0.0',
-      description: 'API para consulta de cardápio e reserva de mesas',
-    },
-    servers: [
-      {
-        // url: `http://localhost:${PORT}`,
-        url: `/`,
-      },
-    ],
-  },
-  apis: [__filename],
-};
 
-const swaggerDocument = require('./swagger.json');
+const swaggerDocument = require('./api/swagger.json');
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 

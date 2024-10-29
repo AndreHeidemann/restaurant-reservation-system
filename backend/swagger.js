@@ -15,9 +15,9 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./api/index.js'],
+  apis: ['./index.js'],
 };
 
 const swaggerSpec = swaggerJsDoc(swaggerOptions);
 
-fs.writeFileSync('./api/swagger.json', JSON.stringify(swaggerSpec, null, 2));
+fs.writeFileSync('./swagger.json', JSON.stringify(swaggerSpec, null, 2));
