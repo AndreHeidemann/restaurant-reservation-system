@@ -9,7 +9,7 @@ const ReservationForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post('http://localhost:5000/reservations', {
+    axios.post(`${process.env.REACT_APP_BACKEND_URL}/reservations`, {
       name,
       people,
       dateTime,

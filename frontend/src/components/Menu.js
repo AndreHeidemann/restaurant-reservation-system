@@ -5,7 +5,7 @@ const Menu = () => {
   const [menu, setMenu] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/menu')
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/menu`)
       .then((response) => {
         setMenu(response.data);
       })
