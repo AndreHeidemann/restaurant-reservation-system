@@ -2,11 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
-const swaggerJsDoc = require('swagger-jsdoc');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
 
 
 const swaggerDocument = require('./swagger.json');
@@ -132,9 +131,9 @@ app.post('/reservations', (req, res) => {
   res.status(201).json({ message: 'Reservation successful!' });
 });
 
-// const PORT = process.env.PORT || 5000;
-// app.listen(PORT, () => {
-//   console.log(`Server running on http://localhost:${PORT}`);
-// });
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
 
-module.exports = app;
+// module.exports = app;
